@@ -12,8 +12,10 @@ export default function ForumPostList() {
     try {
       const response = await fetch(`${API_ADDRESS}/forum/api/posts/?format=json`);
       const json = await response.json();
+      const posts = Array.isArray(json) ? json : [];
       setPosts(json);
     } catch (error) {
+      setPosts([]);
       console.error(error);
     }
   }, []);
