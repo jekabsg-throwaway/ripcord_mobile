@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import ForumPostList from './components/ForumPostList';
 
 export default function Index() {
@@ -10,7 +10,17 @@ export default function Index() {
         alignItems: "center",
       }}
     >
+      <Text style={styles.title}>Ripcord Forum</Text>
       <ForumPostList />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    margin: 18,
+    fontSize: 32,
+    fontWeight: "bold",
+  }
+});
+
